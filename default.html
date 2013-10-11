@@ -16,14 +16,14 @@
     <![endif]-->
   </head>
   <body>
-    <div class="wrapper">
+    <div itemscope itemtype="http://schema.org/SoftwareApplication" class="wrapper">
       <header>
-        <h1>Cloud Commander</h1>
+        <h1 itemprop="name">Cloud Commander</h1>
         <p>{{ site.tagLine }}</p>
 
         <p class="view"><a rel="nofollow" href="https://github.com/coderaiser/cloudcmd">{{ site.viewOn }} GitHub <small>coderaiser/cloudcmd</small></a></p>
         <ul>
-          <li><a rel="nofollow" href="https://github.com/coderaiser/cloudcmd/zipball/master">{{ site.download }} <strong>ZIP</strong></a></li>
+          <li><a itemprop="downloadUrl" rel="nofollow" href="https://github.com/coderaiser/cloudcmd/zipball/master">{{ site.download }} <strong>ZIP</strong></a></li>
           <li><a rel="nofollow" href="https://github.com/coderaiser/cloudcmd/tarball/master">{{ site.download }} <strong>TAR</strong></a></li>
           <li><a rel="nofollow" href="https://github.com/coderaiser/cloudcmd">{{ site.viewOn }} <strong>GitHub</strong></a></li>
         </ul>
@@ -33,7 +33,7 @@
         {{ content }}
       </section>
       <footer>
-        <p>{{ site.maintainedBy}} <a rel="nofollow" href="https://coderaiser.github.io">Coderaiser</a></p>
+        <p>{{ site.maintainedBy}} <a rel="nofollow" href="https://coderaiser.github.io"><span itemprop="author" itemscope itemtype="http://schema.org/Person">Coderaiser</span></a></p>
       </footer>
     </div>
     <script async src="http://cdn.cloudcmd.io/js/scale.fix.js"></script>
