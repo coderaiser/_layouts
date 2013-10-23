@@ -41,7 +41,8 @@
     </div>
     <script async src="http://cdn.cloudcmd.io/js/scale.fix.js"></script>
     <script>
-    (function(){function d(a){var c=document.createElement("script");c.async=!0;c.src=a;a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(c,a)}d("https://apis.google.com/js/plusone.js")(function(a,c,b,d,e){a.GoogleAnalyticsObject=b;a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)};a[b].l=1*new Date})(window,document,"ga");d("//www.google-analytics.com/analytics.js");ga("create","{{ site.ga }}","{{ site.canonical}}");ga("send","pageview")})();
+    (function(){var a="https://apis.google.com/js/plusone.js",b=document.createElement("script");b.async=!0;b.src=a;a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a)})();(function(a,b,f,g,c,d,e){a.GoogleAnalyticsObject=c;a[c]=a[c]||function(){(a[c].q=a[c].q||[]).push(arguments)};a[c].l=1*new Date;d=b.createElement(f);e=b.getElementsByTagName(f)[0];d.async=1;d.src=g;e.parentNode.insertBefore(d,e)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");
+    ga("create","{{ site.ga }}","{{ site.canonical }}");ga("send","pageview");
     </script>
 
   </body>
