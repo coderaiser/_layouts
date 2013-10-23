@@ -1,4 +1,4 @@
-cloudcmd-jekyll
+Layouts
 ===============
 
-jekyll template for cloudcmd.io
+jekyll template for [Cloud Commander](http://cloudcmd.io "Cloud Commander").
