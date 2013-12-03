@@ -47,7 +47,12 @@
         <p>{{ site.maintainedBy}} <a rel="nofollow" href="http://coderaiser.github.io"><span itemprop="author" itemscope itemtype="http://schema.org/Person">Coderaiser</span></a></p>
       </footer>
     </div>
-    <script async src="http://cdn.cloudcmd.io/js/scale.fix.js"></script>
+    <script>
+        /*scale fix */
+        var metas=document.getElementsByTagName('meta');var i;if(navigator.userAgent.match(/iPhone/i)){for(i=0;i<metas.length;i++){if(metas[i].name=="viewport"){metas[i].content="width=device-width, minimum-scale=1.0, maximum-scale=1.0";}}
+        document.addEventListener("gesturestart",gestureStart,false);}
+        function gestureStart(){for(i=0;i<metas.length;i++){if(metas[i].name=="viewport"){metas[i].content="width=device-width, minimum-scale=0.25, maximum-scale=1.6";}}}
+    </script>
     <script>
     (function(){var a="https://apis.google.com/js/plusone.js",b=document.createElement("script");b.async=!0;b.src=a;a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a)})();(function(a,b,f,g,c,d,e){a.GoogleAnalyticsObject=c;a[c]=a[c]||function(){(a[c].q=a[c].q||[]).push(arguments)};a[c].l=1*new Date;d=b.createElement(f);e=b.getElementsByTagName(f)[0];d.async=1;d.src=g;e.parentNode.insertBefore(d,e)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");
     ga("create","{{ site.ga }}","{{ site.canonical }}");ga("send","pageview");
