@@ -20,16 +20,17 @@
     <meta name="twitter:image" content="{{ site.image }}">
     
     <meta property="og:image" content="{{ site.image }}">
-    <meta property="og:title" content="{{ site.description | default: site.tagLine }}">
+    <meta property="og:title" content="{{ site.title }}">
     <meta property="og:url" content="http://{{ site.canonical }}">
-    <meta property="og:site_name" content="{{ site.tagLine }}">
     
     {% if site.description %}
         <meta name="description" content="{{ site.description }}" />
         <meta name="twitter:description" content="{{ site.description }}">
+        <meta name="og:description" content="{{ site.description }}" />
     {% else %}
         <meta name="description" content="{{ site.tagLine }}" />
         <meta name="twitter:description" content="{{ site.tagLine }}">
+        <meta name="og:description" content="{{ site.tagLine }}" />
     {% endif %}
 
     <!--[if lt IE 9]>
