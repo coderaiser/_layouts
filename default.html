@@ -13,14 +13,24 @@
     <meta name="yandex-verification" content="{{ site.yandex }}" />
     <meta itemprop="image" content="{{ site.image }}">
     
-    <meta name="twitter:card" content="summary">
+    {% if site.twitter_summery_type %}
+        <meta name="twitter:card" content="{{ site.twitter_summery_type }}">
+    {% else %}
+        {% if site.image %}
+            <meta name="twitter:card" content="summary_large_image">
+        {% else %}
+            <meta name="twitter:card" content="summary">
+        {% endif %}
+    {% endif %}
+    
     <meta name="twitter:creator" content="@coderaiser_">
     <meta name="twitter:url" content="http://{{ site.canonical }}">
-    <meta name="twitter:title" content="{{ site.title }}">
-    <meta name="twitter:image" content="{{ site.image }}">
+    <meta name="twitter:title" content="{{ site.name }}">
+    
+    <meta name="twitter:image:src" content="{{ site.image }}">
     
     <meta property="og:image" content="{{ site.image }}">
-    <meta property="og:title" content="{{ site.title }}">
+    <meta property="og:title" content="{{ site.name }}">
     <meta property="og:url" content="http://{{ site.canonical }}">
     
     {% if site.description %}
