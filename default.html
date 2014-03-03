@@ -11,20 +11,26 @@
     <link rel="canonical" href="http://{{ site.canonical }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="yandex-verification" content="{{ site.yandex }}" />
-    <meta name="description" content="{{ site.description | default: site.tagLine }}" />
     <meta itemprop="image" content="{{ site.image }}">
     
     <meta name="twitter:card" content="summary">
     <meta name="twitter:creator" content="@coderaiser_">
     <meta name="twitter:url" content="http://{{ site.canonical }}">
     <meta name="twitter:title" content="{{ site.title }}">
-    <meta name="twitter:description" content="{{ site.description | default: site.tagLine }}">
     <meta name="twitter:image" content="{{ site.image }}">
     
     <meta property="og:image" content="{{ site.image }}">
     <meta property="og:title" content="{{ site.description | default: site.tagLine }}">
     <meta property="og:url" content="http://{{ site.canonical }}">
     <meta property="og:site_name" content="{{ site.tagLine }}">
+    
+    {% if site.description %}
+        <meta name="description" content="{{ site.description }}" />
+        <meta name="twitter:description" content="{{ site.description }}">
+    {% else %}
+        <meta name="description" content="{{ site.tagLine }}" />
+        <meta name="twitter:description" content="{{ site.tagLine }}">
+    {% endif %}
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
