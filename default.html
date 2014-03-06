@@ -113,13 +113,14 @@
             }
             
             function metrica() {
-                var c   = 'yandex_metrika_callbacks',
-                    w   = window,
-                    m   = '{{ metricka }}' - 0 || 0;
+                var c       = 'yandex_metrika_callbacks',
+                    w       = window,
+                    m       = '{{ metricka }}' - 0 || 0,
+                    counter = 'yaCounter' + m;
                     
                 (w[c] = w[c] || []).push(function() {
                     try {
-                        w.yaCounter24170074 = new Ya.Metrika({id: 24170074,
+                        w[counter] = new Ya.Metrika({id: 24170074,
                                 clickmap:true,
                                 trackLinks:true,
                                 accurateTrackBounce:true});
