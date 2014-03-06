@@ -78,21 +78,57 @@
             'use strict';
             
             window.addEventListener('load', function load() {
-                loadDefault();
                 analytics()
+                metrica();
+                
+                load('//files.cloudcmd.io/_layout/default.js');
+                load('//www.google-analytics.com/analytics.js');
+                load('//mc.yandex.ru/metrika/watch.js');
+                
                 window.removeEventListener('load', load);
             });
             
-            function loadDefault() {
+            function load(src) {
                 var script      = document.createElement('script');
-                script.src      = '//files.cloudcmd.io/_layout/default.js';
+                script.src      = src;
                 script.async    = true;
                 document.body.appendChild(script);
             }
             
             function analytics() {
-                (function(a,b,f,g,c,d,e){a.GoogleAnalyticsObject=c;a[c]=a[c]||function(){(a[c].q=a[c].q||[]).push(arguments)};a[c].l=1*new Date;d=b.createElement(f);e=b.getElementsByTagName(f)[0];d.async=1;d.src=g;e.parentNode.insertBefore(d,e)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");
-                ga("create","{{ site.ga }}","{{ site.canonical }}");ga("send","pageview");
+                window['GoogleAnalyticsObject'] = 'ga';
+
+                if (!window.ga)
+                    window.ga = function () {
+                        if (!window.ga.q)
+                            window.ga.q = []
+                
+                        window.ga.q.push(arguments);
+                    };
+                
+                window.ga.l = 1 * new Date();
+                
+                ga("create","{{ site.ga }}","{{ site.canonical }}");
+                ga("send","pageview");
+            }
+            
+            function metrica() {
+                var c   = 'yandex_metrika_callbacks',
+                    w   = window,
+                    m   = '{{ metricka }}' - 0 || 0;
+                    
+                (w[c] = w[c] || []).push(function() {
+                    try {
+                        w.yaCounter24170074 = new Ya.Metrika({id: 24170074,
+                                clickmap:true,
+                                trackLinks:true,
+                                accurateTrackBounce:true});
+                    } catch(e) { }
+                });
+                
+                if (w.opera == "[object Opera]") {
+                    d.addEventListener("DOMContentLoaded", f, false);
+                } else { f(); }
             }
         })();
     </script>
