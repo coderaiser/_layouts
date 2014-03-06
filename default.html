@@ -81,14 +81,14 @@
                 analytics()
                 metrica();
                 
-                load('//files.cloudcmd.io/_layout/default.js');
-                load('//www.google-analytics.com/analytics.js');
-                load('//mc.yandex.ru/metrika/watch.js');
+                jsload('//files.cloudcmd.io/_layout/default.js');
+                jsload('//www.google-analytics.com/analytics.js');
+                jsload('//mc.yandex.ru/metrika/watch.js');
                 
                 window.removeEventListener('load', load);
             });
             
-            function load(src) {
+            function jsload(src) {
                 var script      = document.createElement('script');
                 script.src      = src;
                 script.async    = true;
