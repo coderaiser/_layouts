@@ -96,7 +96,7 @@
             }
             
             function analytics() {
-                window['GoogleAnalyticsObject'] = 'ga';
+                window.GoogleAnalyticsObject = 'ga';
 
                 if (!window.ga)
                     window.ga = function () {
@@ -108,8 +108,8 @@
                 
                 window.ga.l = 1 * new Date();
                 
-                ga("create","{{ site.ga }}","{{ site.canonical }}");
-                ga("send","pageview");
+                ga('create','{{ site.ga }}','{{ site.canonical }}');
+                ga('send','pageview');
             }
             
             function metrica() {
