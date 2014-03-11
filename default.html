@@ -115,12 +115,12 @@
             function metrica() {
                 var c       = 'yandex_metrika_callbacks',
                     w       = window,
-                    m       = '{{ metricka }}' - 0 || 0,
-                    counter = 'yaCounter' + m;
+                    id      = '{{ site.metrika }}' - 0 || 0,
+                    counter = 'yaCounter' + id;
                     
                 (w[c] = w[c] || []).push(function() {
                     try {
-                        w[counter] = new Ya.Metrika({id: 24170074,
+                        w[counter] = new Ya.Metrika({id: id,
                                 clickmap:true,
                                 trackLinks:true,
                                 accurateTrackBounce:true});
