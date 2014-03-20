@@ -19,7 +19,7 @@
             border-bottom: #39c 2px solid;
         }
         
-        li > a:hover {
+        .link-download {
             border-bottom: #999 2px solid;
         }
         
@@ -39,6 +39,10 @@
             left: 3px;
             opacity: 0.9;
             -webkit-filter: brightness(95%);
+            -moz-filter: brightness(95%);
+            -ms-filter: brightness(95%);
+            -o-filter: brightness(95%);
+            filter: brightness(95%);
         }
     </style>
     <link rel="icon" href="{{ site.favicon }}">
@@ -98,9 +102,9 @@
             <p><a id="js-contact" rel="nofollow" href="https://github.com/{{ site.repoSource }}/issues/new">{{ site.contact }}</a></p>
         </p>
         <ul>
-          <li><a itemprop="downloadUrl" rel="nofollow" href="https://github.com/{{ site.repoSource }}/zipball/master">{{ site.download }} <strong>ZIP</strong></a></li>
-          <li><a rel="nofollow" href="https://github.com/{{ site.repoSource }}/tarball/master">{{ site.download }} <strong>TAR</strong></a></li>
-          <li><a rel="nofollow" href="https://github.com/{{ site.repoSource }}">{{ site.viewOn }} <strong>GitHub</strong></a></li>
+          <li><a class="link-download" itemprop="downloadUrl" rel="nofollow" href="https://github.com/{{ site.repoSource }}/zipball/master">{{ site.download }} <strong>ZIP</strong></a></li>
+          <li><a class="link-download" rel="nofollow" href="https://github.com/{{ site.repoSource }}/tarball/master">{{ site.download }} <strong>TAR</strong></a></li>
+          <li><a class="link-download" rel="nofollow" href="https://github.com/{{ site.repoSource }}">{{ site.viewOn }} <strong>GitHub</strong></a></li>
         </ul>
       
        {% if page.lang %}
