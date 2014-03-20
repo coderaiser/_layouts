@@ -34,15 +34,15 @@
     <meta property="og:url" content="http://{{ site.canonical }}">
     
     {% if site.description %}
-        <meta name="description" content="{{ site.description }}" />
+        <meta name="description" content="{{ site.description }}">
         <meta name="twitter:description" content="{{ site.description }}">
-        <meta name="og:description" content="{{ site.description }}" />
+        <meta name="og:description" content="{{ site.description }}">
     {% else %}
-        <meta name="description" content="{{ site.tagLine }}" />
+        <meta name="description" content="{{ site.tagLine }}">
         <meta name="twitter:description" content="{{ site.tagLine }}">
-        <meta name="og:description" content="{{ site.tagLine }}" />
+        <meta name="og:description" content="{{ site.tagLine }}" >
     {% endif %}
-
+    
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -64,6 +64,15 @@
           <li><a rel="nofollow" href="https://github.com/{{ site.repoSource }}/tarball/master">{{ site.download }} <strong>TAR</strong></a></li>
           <li><a rel="nofollow" href="https://github.com/{{ site.repoSource }}">{{ site.viewOn }} <strong>GitHub</strong></a></li>
         </ul>
+      
+       {% if page.lang %}
+           {% for lang in page.lang %}
+               <a href="{{ lang.link }}" title="{{ lang.name }}">
+                   <img class="img-flag" src="http://files.cloudcmd.io/img/lang//{{ lang.name }}.png" alt="{{ lang.name }}">
+               </a>
+               <br>
+            {% endfor %}
+       {% endif %}
       
       </header>
       <section>
