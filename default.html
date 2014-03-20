@@ -106,11 +106,11 @@
            {% for lang in page.lang %}
                {% if lang.translation %}
                    <a href="{{ lang.link }}" title="{{ lang.translation }}">
-                       <img class="img-flag" src="http://files.cloudcmd.io/img/lang//{{ lang.name }}.png" alt="{{ lang.translation }}">
+                       <img class="img-flag" src="http://files.cloudcmd.io/img/lang/{{ lang.name }}.png" alt="{{ lang.translation }}">
                    </a>
                {% else %}
                <a href="{{ lang.link }}" title="{{ lang.name }}">
-                   <img class="img-flag" src="http://files.cloudcmd.io/img/lang//{{ lang.name }}.png" alt="{{ lang.name }}">
+                   <img class="img-flag" src="http://files.cloudcmd.io/img/lang/{{ lang.name }}.png" alt="{{ lang.name }}">
                </a>
                {% endif %}
             {% endfor %}
