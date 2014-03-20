@@ -25,12 +25,18 @@
         
         .img-flag {
             display: block;
-            padding: 10px 0;
+            padding: 10px;
             border: none; /* rm borders in ie */
         }
         
         .img-flag:hover {
             box-shadow: #39c 0px 3px;
+        }
+        
+        @media print, screen and (max-width: 960px) {
+            .img-flag {
+                display: inline;
+            }
         }
     </style>
     <link rel="icon" href="{{ site.favicon }}">
