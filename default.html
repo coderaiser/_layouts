@@ -26,13 +26,20 @@
         
         .img-link {
             display: block;
-            background-repeat: no-repeat;
             padding: 3px 0;
             /* rm borders in ie */
             border: none;
             border-bottom: rgba(255,255,255,0) 2px solid;
             border-bottom: rgba(255, 255, 255, 0) 2px solid;
             margin: 3px 0;
+        }
+        
+        .no-hover:hover {
+            border: none;
+        }
+        
+        .img-link:hover {
+            border-bottom: #39c 2px solid;
         }
         
         @media print, screen and (max-width: 960px) {
@@ -51,31 +58,6 @@
                  local('OpenSans'),
                  url(http://themes.googleusercontent.com/static/fonts/opensans/v8/RjgO7rYTmqiVp7vzi-Q5UfY6323mHUZFJMgTvxaG2iE.eot) format('embedded-opentype'),
                  url(http://themes.googleusercontent.com/static/fonts/opensans/v8/RjgO7rYTmqiVp7vzi-Q5UT8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
-        }
-    </style>
-    <style>
-        .img-English {
-            width: 70px;
-            height: 47px;
-            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAvCAMAAABpC0wkAAAASFBMVEUAAADtVWVKidxKidxKidztVWXtVWXtVWXtVWXtVWVKidztVWX19/pKidz////m7/tjmuGbvuzN3/Z1peWJsuj7/P6uyvBVkN64pmm3AAAAC3RSTlMACfVIrLCzSfanRq8e3E0AAADZSURBVEjH7ddND4IwDIDhouDAbe0+4f//U6eJCCREsvZgIu9ltydps0uhdG0vdif9tf6m4FnT2v30kYamMK1lMsUBuFs+oxW0EkwHVoLpN4wLVYzeMB6dBBPQCzATIgkwCRGjXWQOtmIcFYYigxlDCJTxlTFEoZLBVTlVDuWXionVu0l5VsgxVuxnJloG4+aRrAiTWUz6DMX5xSOi8TER4shhCMNUnmnMxGL8e0mewSw7mR9kjEgn82+MFulk9oNOQulASTAKYOArAwA0bKdr4Jm69ZXAfME8ALgJl5tXdB3rAAAAAElFTkSuQmCC);
-        }
-        
-        .img-Russian {
-            width: 70px;
-            height: 47px;
-            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAvBAMAAACs+6ElAAAAJ1BMVEXxqLH19/rtVWXtVWX19/r19/rtVWXtVWXtVWXveYX19/rtVWVKidw3jtPCAAAACnRSTlMBrLBKR/X2pPsiZaLekgAAAGJJREFUOMtjYGARXYUPBDowMDBIrcIPFjIwMK4iBAQYvAiqWQKyiqBlqwiCpUSoWTWqhgpqzhAGo2pGqJrdhMGoGjqp0SaoZBODNUE1mxnYCaopYCBo2SZgncKshldJkgEDACP8oC1rSl2/AAAAAElFTkSuQmCC);
-        }
-        
-        .img-Ukrainian {
-            width: 70px;
-            height: 47px;
-            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAvBAMAAACs+6ElAAAAIVBMVEWosp9Kidz21mBKidz21mBKidz21mD21mBKidz21mBKidxfLwueAAAACXRSTlMBrK1H9vVNRvpYGVshAAAAX0lEQVQ4y2NgYBZdhQ8EGjAwMEitwg8WMjAwriIEBBisCKpZDLKKoGWrCIKlRKhZNapmVA1FamYSBqNqRtUMCjWaBJVMYqgkqGY6AxNBNQoMBC2bBKxT2FTwKnFKYAAAR6n/BBS0hQIAAAAASUVORK5CYII=);
-        }
-        
-        .img-github {
-            width: 100px;
-            height: 83px;
-            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABTCAMAAABeQ1JzAAAC+lBMVEUAAAAgHx8gHx8dHBweHR0cGxsgHx8gHx88TFMgICAfHh4gHx8gHh4gHx8gHx8eHR0gHx8gHh4fHh4gHx8gICAfHh4gHx8gHx8gICAgHx8gICAgHx8fHR2b2fCV0uogHx8hICAgHx8gHx8gICAgHx8fHh4gHx6c2/Ga2PCc2vAgHx+Z1/CZ1/AgHx+b2fAeHR0gICCd2/EgHx8gHx+Y1u+c2vCc2vCc2/CY1/AgHx+c2vAgHx8gHx+Lyut+vOec2vCc2vAgHx+c2vCd2/IgHx+c2vCc2vB+vOec2vCc2vCc2vB+vecFBQUwODtHWmF+vOchISFYc30xOTw2QkUvNjmc2vA/TVN1n65liJU6RksODQ1/r79Xcnx9u+YCAgIFBQUEBAQAAAB+vOd8uuZ9u+aX1e6MyutjhZEgHx8gHh4pLS8gHx/0yrGc2vAeHBx8uuYiISIfHh70yrD1y7L3zLOW1O8cGxqsXFH///+d2/GrWU74zbNCOTWe3fORz+31zbX/+/kxOT01Lyx+vOfzyK8vKilad4HuxKwODg742cYoKyx9vOnMppH1z7jpvqbwxq2a1+776d7euKL54NGPzu1ulKJgf4u8mYbatZ/ZtbCxZ1xYS0V2obFfUkr20bv87eQlJSX99O6/f3b+9/NIXmo9NjP37+765dctMzbGh3l9u+eUeWpyX1Wdfm+uj33SrZe2lIFIPjh7qbrswKgFBQUWFRXkuaI6NDD69fWBv+h/r8FDWGXRpZ8qLzHmtJ7mzclqWVAKCgrAoI2nh3aFt8p0nq3IoYyGxOp5prZ7t+C4c2mMyuxlh5Ty5OM2QUb88uvbo4/u3tyHu816ZluW0ueOxdlAUVh/al/UsJvMmpRdhqNkkK+e3/WYgHK7eXBpjpvdvLj06ej21MBQaHCtXlPkvqZNQj2Mxt4/T1VRcIU4RUt7tNdvpMizamBPannr2NbGj4iIcmaHc2Zwl6bp1dOMwdR5sdOFu9RznKvPkX/Qk4HhurAhICAlIyObEv5/AAAA+XRSTlMABSkQNgM8LgFPS/dBIDMJeoQUGwuub0RXK2K3JSgL7NL0GJFI2GnnBmacHRfdc15+jZWoM6xTPxHG9ozlYFjvuMK/2b3O30abfUikUZm26Kxci9VMmWbh4m+eyemMuXrv5bvO1vL97/37dP/////////////////////////////////////////+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////43TBLbAAAIQElEQVRo3szUTcuCQBSGYX0bR33N/IgpbQIrsYXgppa1Cfo3z6b/j4vAKIIges6mrt3AgZsDh3G+rFwUKv9kMFfFopQ13D2Aph4n78eScd0A2LuiSFxhYMPkTSK0GFSxKBLizmjvtttouvSVVpMyzoewpw3uQlEkxUOUTTd6W9vVcd0P76o7tem/n0V4SCWNoMWTrsOrC560gSDiGVCMJzkuC4p1f3UTZwfKzpGYgbIVRVQPRiGLRGA0vqCxOYFzzvkLPoCV0fc178GKFNlIDHgtuYqGwPqPagQHSMyoyGgFFv+1lFdSy6Y1jSgKwyR+RetMigrW1E2tdFfINmRV6A/o/4hIogMzTIUZZESEGDGzsBpi/KBKiEZFMC4kSgIuBNGQRZtNSELaXWhasilU6LnX0TomECZ9wa/DeJ55z7nn3pHPyNpYsojbDYFJvVW0ig0ywsD/2Vfx+Q78gcBgMFiFVyrgP/D5KhWfPzXJWVU0kAsTDH+rGGuvr7fbsfL+cbG4Byoe75djbQiux45PfSv/MMYnbo5b5VpQcLlcHkGIBKvVDaRqNRgRBBQVIhvtwmBMMTwNsl0SvEDweFxI3pHwLxz2uja/DP4Lsva9hHKFxXyIc90TF8qLYcDUCk+CLEiMQBkxrtIMw0S5e4wohNNXQClVpIJZlUBeSJBCEJKFe0yuecLnpyF5/kczx/TC8LUoFUyrBGJcwUrFKDAiMt3d60Q8m/RMEMBfNp643r1kRLDyyYet/CGVQGafYSOVmheavcNfNDPszYkoh4h3txcJtsHswDVCy403L7sSiAk/y7m3cLWyl7fNc5aNR10yRRuZeILt5LJQL+qnW/nEaz5gyHYE7jjJnySuaZo925lEgMEzlqbpRJeHMlJ7GPJ+RvmjCjiRIDRAGnKIawi56fJhgPzCkOVHz1uLykzYdSSpBpELGFL5BvXm0rlzlO4iKu9JNI7QmXqaA1unGLJIqpFInc1OOFTzmsnDQ2VXWw16vcFq1KILZkHkO7xtlShUfCZOs+z5ZUgOCXU7LEvHGdSqyDaCvDLg/9p0pFprdKKMRpKwSA3QanXmMXcOLDkI+yLeVfc/orXK1xudzF1PmkYBvyOHzUynUefRNG7iJbykI8xgYNQYzbyJII02ebNVZtvQkRMsGZdQvVoRPHUMk6vzQyPe2m5/ZIWv5xgGzSgVS+GDEQxYDdiB2u6waKZOWwuhdur1VvUscjSHY9ZVtK0coXpxYprvhaRF1aczIy+hHp8WOWSugKr1clgZzYzFROi0KJ/OPD9GzBrQ7ymy5jleX9B6UDjJeSRIsH/oHbWFS4bRJ3UUWIOOaKfGQEWQTr3TLEEcpofOZsvrFVBhg8L5pLzCoUB5D6vj7mPG5hYy8mbuoTXrUD3yNLGMtqPWVwrfuQT53f/bjJ2FNhEEYABOTWOieB9VYnOItklMiKbNUYut4n3f933iw7KzGXLAogmsopZENEiqARX2IULsg4qmSBMiVC21WPLgjbX0oeCNL0UF2YCzsWY3FYXdreL/MEk2ZD7mys7sqTtXz/CueLyxy5A9M5aIPMlX6tC4HO0+5yk4nlvfrl69wxFe76kbr5GhUyNDZJQzGAwyR59fOHfW4z3i9XoRdxZ1mAe9RZ89p17cu0yjvqoeJfzgK5eX/GzM0Bk6DILclcvPu6/dPf0iFjuHEou9uH767rXuxxePMQBOrZ4+WrhRqa9YO/nngCnK1dVzkAOgm90I3b6Ccvv2sWMnaDd7UTelTCmmp1RqBlLxKVwPKMaPQE8KKvzFAfopVWWTRoodC+26iW66d0Np8Yzek0y2tjb8SGtrMrl3ZYlMQuy2CZUMRW0Yz784s7nZDwCA+QB/c0NyX6kUxLTYoqoEVM963hotn4MNCGjYLZeCLDLLSmbkqMwwbpxmYb8ENqyUgGgtKrSX0IFPhycr/nSWANsVMmlRjYGJbGK9Ei0Bxbih07hN9ay13LFaLpOYcbMh6O3MrF41bbX+2TM/e+ebnd+KjmVLPfe4TlJK52B0JtT5LNH4PkQDVOe0/MAMyyPqCva8Wy6TnBEVGMRyDEMzoBmy1Y/hkOlVLDJEJj3lVVP7J1IeKeUhk8o4RGIUyrLq2Xr9wir2WM8o+chMHiLdGS2fUCKbLAARm3+ODP93yIi/huTXyeZVbLlRPdiIqmYbhkF6x06IYe62kwCVW7YihF5n1g4OYHFZHQsaGQyG7p9nq7/EIrmbjYjNPDLMtzk1UiGLc9NiHMcDfb9BSPRl7Xyr3Sie0CxbgCopII/4SB/GsgE8n1rHcpHNqbEa8P6QJyEGE0/5yIMcmgo9COmPwy6qGfMKROA+BTGQjvCQB08pgMHsZ06ZaxLeZ+ZFBeNJWxYZidQrPhLooZHyNhXBCzGphE4qW+G3kV7GD+m3N8kAWz2dYimmLxBpzLqBP9TGa4tG6LRazCGd6fi7rg4ficcBBrJvHtCoXScDpO/Ly0/peIrkNUVobxnwQkhfezhMtATbMhC6O8knyIJUKni8KRxuRzQXq0DE6MD5SgtBhLtCANDvnpDk07QbAOpjE0G0RHB+XDKBcc3FeXmIkJcJKt5FBHE82vEyTb1nkSiJ82ITPL1UTn6HRQmC6Pj6gQgT7XikhQh3fHiDrhz38Y2lFjFbYgeHBPNVthNsD/ma0Es0OAAxWMWtea1zfjHyMF8GCZRgMWKwacRvWF22BQOQJl+ULflI7TyTWeL/8PJl8wzFCL8ltYuWmjRGmfQYza66XSsOrDlUhKw5uH+F1ampUQ3m3VFr0diXLKmvr6urq69fYteYa4yy/ynfAQplFiYG+n0xAAAAAElFTkSuQmCC);
         }
     </style>
     <link rel="canonical" href="http://{{ site.canonical }}" />
@@ -126,7 +108,9 @@
         <div id="js-google-pluseone" class="g-plusone" data-size="small" data-annotation="none">
             <svg class="g-plusone-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" width="22.0px" height="13px" viewBox="-3.0 -2.0 22.0 13.0"><path d="m3.988,3.428c.281-.272 .306-.65 .306-.863 0-.851-.526-2.175-1.54-2.175-.317,0-.66,.153-.855,.391-.209,.247-.27,.566-.27,.874 0,.791 .477,2.103 1.528,2.103 .305-0 .635-.141 .831-.33m-.798,2.233c0,0-.68,.06-1.193,.224-.269,.094-.978,.344-.978,1.181 0,.84 .843,1.441 2.151,1.441 1.173,0 1.797-.544 1.797-1.275 0-.604-.589-1.209-1.333-1.562-.14,.008-.444-.009-.444-.009zm1.552-5.081c.205,.243 .627,.633 .627,1.44 0,.875-.514,1.289-1.026,1.679-.16,.154-.343,.32-.343,.579 0,.259 .184,.402 .318,.508l.44,.331c.538,.438 1.026,.84 1.026,1.654 .001,1.113-1.113,2.229-3.213,2.229-1.773,0-2.527-.811-2.527-1.686-0-.426 .118-1.114 .84-1.528 .757-.449 1.622-.49 2.17-.526-.171-.213-.203-.366-.203-.733 0-.201 .062-.32 .123-.462-.135,.012-.27,.023-.392,.023-1.295,0-2.029-.934-2.029-1.855 0-.544 .257-1.146 .782-1.584 .698-.554 1.529-.649 2.189-.649h2.417l-.6,.58h-.599z"></path><path d="m3.988,3.428c.281-.272 .306-.65 .306-.863 0-.851-.526-2.175-1.54-2.175-.317,0-.66,.153-.855,.391-.209,.247-.27,.566-.27,.874 0,.791 .477,2.103 1.528,2.103 .305-0 .635-.141 .831-.33m-.798,2.233c0,0-.68,.06-1.193,.224-.269,.094-.978,.344-.978,1.181 0,.84 .843,1.441 2.151,1.441 1.173,0 1.797-.544 1.797-1.275 0-.604-.589-1.209-1.333-1.562-.14,.008-.444-.009-.444-.009zm1.552-5.081c.205,.243 .627,.633 .627,1.44 0,.875-.514,1.289-1.026,1.679-.16,.154-.343,.32-.343,.579 0,.259 .184,.402 .318,.508l.44,.331c.538,.438 1.026,.84 1.026,1.654 .001,1.113-1.113,2.229-3.213,2.229-1.773,0-2.527-.811-2.527-1.686-0-.426 .118-1.114 .84-1.528 .757-.449 1.622-.49 2.17-.526-.171-.213-.203-.366-.203-.733 0-.201 .062-.32 .123-.462-.135,.012-.27,.023-.392,.023-1.295,0-2.029-.934-2.029-1.855 0-.544 .257-1.146 .782-1.584 .698-.554 1.529-.649 2.189-.649h2.417l-.6,.58h-.599z"></path><path d="m13.997,1-.997,0 0,1 1,0 0,6 1,0 0-6 0-1z"></path><path d="m12,4-2,0 0-2-1,0 0,2-2,0 0,1 2,0 0,2 1,0 0-2 2,0z"></path></svg>
         </div>
-        <a rel="nofollow" href="https://github.com/{{ site.repoSource }}" class="img-link img-github" title= "{{ site.viewOn }}"></a>
+        <a rel="nofollow" class="no-hover" href="https://github.com/{{ site.repoSource }}">
+            <img class="img-link" src="http://files.cloudcmd.io/img/social/github.png" alt="{{ site.viewOn }}" title="{{ site.viewOn }}">
+        </a>
         <p>
         <a rel="nofollow" href="https://github.com/{{ site.repoName }}">{{ site.improveText }}</a>
         <br>
@@ -141,9 +125,13 @@
        {% if page.lang %}
            {% for lang in page.lang %}
                {% if lang.translation %}
-                   <a href="{{ lang.link }}" class="img-link img-{{ lang.name }}" title="{{ lang.translation }}"></a>
+                   <a class="no-hover" href="{{ lang.link }}" title="{{ lang.translation }}">
+                       <img class="img-link" src="http://files.cloudcmd.io/img/lang/{{ lang.name }}.png" title="{{ lang.translation }}">
+                   </a>
                {% else %}
-                   <a href="{{ lang.link }}" class="img-link img-{{ lang.name }}" title="{{ lang.name }}"></a>
+                   <a class="no-hover" href="{{ lang.link }}" title="{{ lang.name }}">
+                       <img class="img-link" src="http://files.cloudcmd.io/img/lang/{{ lang.name }}.png" title="{{ lang.name }}">
+                   </a>
                {% endif %}
             {% endfor %}
        {% endif %}
