@@ -117,13 +117,13 @@
         <br>
         <a id="js-contact" rel="nofollow" href="https://github.com/{% if page.repoSource %}{{ page.repoSource }}{% else %}{{site.repoSource}}{% endif %}/issues/new">{{ site.contact }}</a>
         </p>
-        {% if !page.hideDownloadButtons %}
+        {% unless page.hideDownloadButtons %}
         <ul>
           <li><a class="link-download" itemprop="downloadUrl" rel="nofollow" href="https://github.com/{{ site.repoSource }}/zipball/master">{{ site.download }} <strong>ZIP</strong></a></li>
           <li><a class="link-download" rel="nofollow" href="https://github.com/{{ site.repoSource }}/tarball/master">{{ site.download }} <strong>TAR</strong></a></li>
           <li><a class="link-download" rel="nofollow" href="https://github.com/{{ site.repoSource }}">{{ site.viewOn|remove: 'GitHub' }} <strong>GitHub</strong></a></li>
         </ul>
-        {% endif %}
+        {% unless %}
       
        {% if page.lang %}
            {% for lang in page.lang %}
