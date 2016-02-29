@@ -49,5 +49,74 @@
         <div class="header font">
             <a href=//cloudcmd.io>&lt;=</a>
         </div>
+          <script>
+        !!(function() {
+            'use strict';
+            
+            window.addEventListener('load', function load() {
+                analytics()
+                metrica();
+                hotjar();
+                
+                jsload('http://files.cloudcmd.io/layout/default.js');
+                jsload('//www.google-analytics.com/analytics.js');
+                jsload('http://mc.yandex.ru/metrika/watch.js');
+                
+                window.removeEventListener('load', load);
+            });
+            
+            function jsload(src) {
+                var script      = document.createElement('script');
+                script.src      = src;
+                script.async    = true;
+                document.body.appendChild(script);
+            }
+            
+            function analytics() {
+                window.GoogleAnalyticsObject = 'ga';
+                
+                if (!window.ga)
+                    window.ga = function () {
+                        if (!window.ga.q)
+                            window.ga.q = []
+                
+                        window.ga.q.push(arguments);
+                    };
+                
+                window.ga.l = 1 * new Date();
+                
+                ga('create','{{ site.ga }}','{{ site.canonical }}');
+                ga('send','pageview');
+            }
+            
+            function metrica() {
+                var c       = 'yandex_metrika_callbacks',
+                    w       = window,
+                    id      = '{{ site.metrika }}' - 0 || 0,
+                    counter = 'yaCounter' + id;
+                    
+                (w[c] = w[c] || []).push(function() {
+                    try {
+                        w[counter] = new Ya.Metrika({id: id,
+                                clickmap:true,
+                                trackLinks:true,
+                                accurateTrackBounce:true});
+                    } catch(e) { }
+                });
+            }
+            
+            function hotjar() {
+                (function(h,o,t,j,a,r){
+                    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                    h._hjSettings={hjid:162655,hjsv:5};
+                    a=o.getElementsByTagName('head')[0];
+                    r=o.createElement('script');r.async=1;
+                    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                    a.appendChild(r);
+                })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+            }
+        })();
+    </script>
+    <noscript><div><img src="//mc.yandex.ru/watch/{{ site.metrika }}" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     </body>
 </html>
