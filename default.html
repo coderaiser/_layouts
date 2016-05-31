@@ -115,7 +115,7 @@
             <svg class="g-plusone-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" width="22.0px" height="13px" viewBox="-3.0 -2.0 22.0 13.0"><path d="m3.988,3.428c.281-.272 .306-.65 .306-.863 0-.851-.526-2.175-1.54-2.175-.317,0-.66,.153-.855,.391-.209,.247-.27,.566-.27,.874 0,.791 .477,2.103 1.528,2.103 .305-0 .635-.141 .831-.33m-.798,2.233c0,0-.68,.06-1.193,.224-.269,.094-.978,.344-.978,1.181 0,.84 .843,1.441 2.151,1.441 1.173,0 1.797-.544 1.797-1.275 0-.604-.589-1.209-1.333-1.562-.14,.008-.444-.009-.444-.009zm1.552-5.081c.205,.243 .627,.633 .627,1.44 0,.875-.514,1.289-1.026,1.679-.16,.154-.343,.32-.343,.579 0,.259 .184,.402 .318,.508l.44,.331c.538,.438 1.026,.84 1.026,1.654 .001,1.113-1.113,2.229-3.213,2.229-1.773,0-2.527-.811-2.527-1.686-0-.426 .118-1.114 .84-1.528 .757-.449 1.622-.49 2.17-.526-.171-.213-.203-.366-.203-.733 0-.201 .062-.32 .123-.462-.135,.012-.27,.023-.392,.023-1.295,0-2.029-.934-2.029-1.855 0-.544 .257-1.146 .782-1.584 .698-.554 1.529-.649 2.189-.649h2.417l-.6,.58h-.599z"></path><path d="m3.988,3.428c.281-.272 .306-.65 .306-.863 0-.851-.526-2.175-1.54-2.175-.317,0-.66,.153-.855,.391-.209,.247-.27,.566-.27,.874 0,.791 .477,2.103 1.528,2.103 .305-0 .635-.141 .831-.33m-.798,2.233c0,0-.68,.06-1.193,.224-.269,.094-.978,.344-.978,1.181 0,.84 .843,1.441 2.151,1.441 1.173,0 1.797-.544 1.797-1.275 0-.604-.589-1.209-1.333-1.562-.14,.008-.444-.009-.444-.009zm1.552-5.081c.205,.243 .627,.633 .627,1.44 0,.875-.514,1.289-1.026,1.679-.16,.154-.343,.32-.343,.579 0,.259 .184,.402 .318,.508l.44,.331c.538,.438 1.026,.84 1.026,1.654 .001,1.113-1.113,2.229-3.213,2.229-1.773,0-2.527-.811-2.527-1.686-0-.426 .118-1.114 .84-1.528 .757-.449 1.622-.49 2.17-.526-.171-.213-.203-.366-.203-.733 0-.201 .062-.32 .123-.462-.135,.012-.27,.023-.392,.023-1.295,0-2.029-.934-2.029-1.855 0-.544 .257-1.146 .782-1.584 .698-.554 1.529-.649 2.189-.649h2.417l-.6,.58h-.599z"></path><path d="m13.997,1-.997,0 0,1 1,0 0,6 1,0 0-6 0-1z"></path><path d="m12,4-2,0 0-2-1,0 0,2-2,0 0,1 2,0 0,2 1,0 0-2 2,0z"></path></svg>
         </div>
         <a rel="nofollow" class="no-hover" href="https://github.com/{% if page.repoSource %}{{ page.repoSource }}{% else %}{{site.repoSource}}{% endif %}">
-            <img class="img-link" src="http://files.cloudcmd.io/img/social/github.png" alt="{{ site.viewOn }}" title="{{ site.viewOn }}">
+            <img class="img-link" src="//files.cloudcmd.io/img/social/github.png" alt="{{ site.viewOn }}" title="{{ site.viewOn }}">
         </a>
         <p>
         <a rel="nofollow" href="https://github.com/{% if page.repoName %}{{ page.repoName }}{% else %}{{ site.repoName }}{% endif %}">{{ site.improveText }}</a>
@@ -134,11 +134,11 @@
            {% for lang in page.lang %}
                {% if lang.translation %}
                    <a class="no-hover" href="{{ lang.link }}" title="{{ lang.translation }}">
-                       <img class="img-link" src="http://files.cloudcmd.io/img/lang/{{ lang.name }}.png" title="{{ lang.translation }}">
+                       <img class="img-link" src="//files.cloudcmd.io/img/lang/{{ lang.name }}.png" title="{{ lang.translation }}">
                    </a>
                {% else %}
                    <a class="no-hover" href="{{ lang.link }}" title="{{ lang.name }}">
-                       <img class="img-link" src="http://files.cloudcmd.io/img/lang/{{ lang.name }}.png" title="{{ lang.name }}">
+                       <img class="img-link" src="//files.cloudcmd.io/img/lang/{{ lang.name }}.png" title="{{ lang.name }}">
                    </a>
                {% endif %}
             {% endfor %}
@@ -149,7 +149,7 @@
         {{ content }}
       </section>
       <footer>
-        <p>{{ site.maintainedBy }} <a rel="nofollow" href="http://coderaiser.github.io"><span itemprop="author" itemscope itemtype="http://schema.org/Person">Coderaiser</span></a></p>
+        <p>{{ site.maintainedBy }} <a rel="nofollow" href="//coderaiser.github.io"><span itemprop="author" itemscope itemtype="http://schema.org/Person">Coderaiser</span></a></p>
       </footer>
     </div>
     <script>
@@ -160,9 +160,9 @@
                 analytics()
                 metrica();
                 
-                jsload('http://files.cloudcmd.io/layout/default.js');
+                jsload('//files.cloudcmd.io/layout/default.js');
                 jsload('//www.google-analytics.com/analytics.js');
-                jsload('http://mc.yandex.ru/metrika/watch.js');
+                jsload('//mc.yandex.ru/metrika/watch.js');
                 
                 window.removeEventListener('load', load);
             });
