@@ -163,7 +163,6 @@
             
             window.addEventListener('load', function load() {
                 analytics()
-                metrica();
                 
                 jsload('//files.cloudcmd.io/layout/default.js');
                 jsload('//www.google-analytics.com/analytics.js');
@@ -193,22 +192,6 @@
                 
                 ga('create','{{ site.ga }}','{{ site.canonical }}');
                 ga('send','pageview');
-            }
-            
-            function metrica() {
-                var c       = 'yandex_metrika_callbacks',
-                    w       = window,
-                    id      = '{{ site.metrika }}' - 0 || 0,
-                    counter = 'yaCounter' + id;
-                    
-                (w[c] = w[c] || []).push(function() {
-                    try {
-                        w[counter] = new Ya.Metrika({id: id,
-                                clickmap:true,
-                                trackLinks:true,
-                                accurateTrackBounce:true});
-                    } catch(e) { }
-                });
             }
         })();
     </script>
