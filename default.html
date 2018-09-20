@@ -201,14 +201,24 @@
            <script src="{{ script }}"></script>
        {% endfor %}
    {% endif %}
-   <script src=https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js></script>
-   <script>
-       anchors.options = {
-           placement: 'left',
-           icon: '¶',
-       };
-       anchors.add();
-   </script>
-  </body>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js></script>
+    <style>
+        .anchor-override {
+            color: #393939
+        }
+        
+        .anchor-override:hover {
+            border: 0;
+        }
+   </style>
+        <script>
+           anchors.options = {
+               placement: 'left',
+               icon: '§',
+               class: "anchor-override"
+           };
+           anchors.add();
+        </script>
+    </body>
 </html>
 
