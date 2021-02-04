@@ -164,17 +164,25 @@
             window.addEventListener('load', function load() {
                 analytics()
                 
-                jsload('//files.cloudcmd.io/layout/default.js');
-                jsload('//www.google-analytics.com/analytics.js');
+                await Promise.all([
+                    jsload('//files.cloudcmd.io/layout/default.js'),
+                    jsload('//www.google-analytics.com/analytics.js'),
+                    jsload('https://d35xxde4fgg0cx.cloudfront.net/assets/embedded.js'),
+                ]);
+                
+                memberful();
                 
                 window.removeEventListener('load', load);
             });
             
             function jsload(src) {
-                var script      = document.createElement('script');
-                script.src      = src;
-                script.async    = true;
-                document.body.appendChild(script);
+                return new Promise((resolve, reject) => {
+                    const script = document.createElement('script');
+                    script.src = src;
+                    script.async = true;
+                    script.addEventListener('load', resolve);
+                    document.body.appendChild(script);
+                });
             }
             
             function analytics() {
@@ -193,10 +201,15 @@
                 ga('create','{{ site.ga }}','{{ site.canonical }}');
                 ga('send','pageview');
             }
+            
+            function memberful() {
+                window.MemberfulOptions = {site: "https://cloudcmd.memberful.com"};
+                window.MemberfulEmbedded.setup();
+             }
         })();
     </script>
-    <noscript><div><img src="//mc.yandex.ru/watch/{{ site.metrika }}" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-   {% if page.scripts%}
+    <noscript>
+    {% if page.scripts%}
        {% for script in page.scripts%}
            <script src="{{ script }}"></script>
        {% endfor %}
@@ -211,14 +224,14 @@
             border: 0;
         }
    </style>
-        <script>
-           anchors.options = {
-               placement: 'left',
-               icon: '§',
-               class: "anchor-override"
-           };
-           anchors.add();
-        </script>
+    <script>
+       anchors.options = {
+           placement: 'left',
+           icon: '§',
+           class: "anchor-override"
+       };
+       anchors.add();
+    </script>
     </body>
 </html>
 
