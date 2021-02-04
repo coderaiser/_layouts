@@ -161,21 +161,18 @@
         !!(function() {
             'use strict';
             
-            window.addEventListener('load', function load() {
+            window.addEventListener('load', async function load() {
                 analytics()
                 
                 await Promise.all([
                     jsload('//files.cloudcmd.io/layout/default.js'),
                     jsload('//www.google-analytics.com/analytics.js'),
-                    jsload('https://d35xxde4fgg0cx.cloudfront.net/assets/embedded.js'),
                 ]);
-                
-                memberful();
                 
                 window.removeEventListener('load', load);
             });
             
-            function jsload(src) {
+            async function jsload(src) {
                 return new Promise((resolve, reject) => {
                     const script = document.createElement('script');
                     script.src = src;
@@ -201,11 +198,6 @@
                 ga('create','{{ site.ga }}','{{ site.canonical }}');
                 ga('send','pageview');
             }
-            
-            function memberful() {
-                window.MemberfulOptions = {site: "https://cloudcmd.memberful.com"};
-                window.MemberfulEmbedded.setup();
-             }
         })();
     </script>
     <noscript>
