@@ -13,22 +13,22 @@
         code, pre {
             font-family: Monaco, Bitstream Vera Sans Mono,Lucida Console, Terminal, Monospace;
         }
-        
+
         .g-plusone-svg {
             fill: white;
             background-color: #dd4b39;
             border: 1px solid transparent;
             border-radius: 2px;
         }
-        
+
         a:hover {
             border-bottom: #39c 2px solid;
         }
-        
+
         .link-download:hover {
             border-bottom: #999 2px solid;
         }
-        
+
         .img-link {
             display: block;
             padding: 3px 0;
@@ -38,15 +38,15 @@
             border-bottom: rgba(255, 255, 255, 0) 2px solid;
             margin: 3px 0;
         }
-        
+
         .no-hover:hover {
             border: none;
         }
-        
+
         .img-link:hover {
             border-bottom: #39c 2px solid;
         }
-        
+
         @media print, screen and (max-width: 960px) {
             .img-link {
                 display:inline-block;
@@ -59,17 +59,80 @@
             font-style: normal;
             font-weight: 400;
             src: url(//themes.googleusercontent.com/static/fonts/opensans/v8/RjgO7rYTmqiVp7vzi-Q5UfY6323mHUZFJMgTvxaG2iE.eot);
-            src: local('Open Sans'), 
+            src: local('Open Sans'),
                  local('OpenSans'),
                  url(//themes.googleusercontent.com/static/fonts/opensans/v8/RjgO7rYTmqiVp7vzi-Q5UfY6323mHUZFJMgTvxaG2iE.eot) format('embedded-opentype'),
                  url(//themes.googleusercontent.com/static/fonts/opensans/v8/RjgO7rYTmqiVp7vzi-Q5UT8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
         }
     </style>
+      <style>
+          #carbonads * {
+              margin: initial;
+              padding: initial;
+          }
+          #carbonads {
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+              Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial,
+              sans-serif;
+          }
+          #carbonads {
+              display: flex;
+              max-width: 330px;
+              background-color: hsl(0, 0%, 98%);
+              box-shadow: 0 1px 4px 1px hsla(0, 0%, 0%, 0.1);
+              z-index: 100;
+          }
+          #carbonads a {
+              color: inherit;
+              text-decoration: none;
+          }
+          #carbonads a:hover {
+              color: inherit;
+          }
+          #carbonads span {
+              position: relative;
+              display: block;
+              overflow: hidden;
+          }
+          #carbonads .carbon-wrap {
+              display: flex;
+          }
+          #carbonads .carbon-img {
+              display: block;
+              margin: 0;
+              line-height: 1;
+          }
+          #carbonads .carbon-img img {
+              display: block;
+          }
+          #carbonads .carbon-text {
+              font-size: 13px;
+              padding: 10px;
+              margin-bottom: 16px;
+              line-height: 1.5;
+              text-align: left;
+          }
+          #carbonads .carbon-poweredby {
+              display: block;
+              padding: 6px 8px;
+              background: #f1f1f2;
+              text-align: center;
+              text-transform: uppercase;
+              letter-spacing: 0.5px;
+              font-weight: 600;
+              font-size: 8px;
+              line-height: 1;
+              border-top-left-radius: 3px;
+              position: absolute;
+              bottom: 0;
+              right: 0;
+          }
+      </style>
     <link rel="canonical" href="http://{{ site.canonical }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="yandex-verification" content="{{ site.yandex }}" />
     <meta itemprop="image" content="{{ site.image }}">
-    
+
     {% if site.twitter_summery_type %}
         <meta name="twitter:card" content="{{ site.twitter_summery_type }}">
     {% else %}
@@ -79,17 +142,17 @@
             <meta name="twitter:card" content="summary">
         {% endif %}
     {% endif %}
-    
+
     <meta name="twitter:creator" content="@coderaiser_">
     <meta name="twitter:url" content="http://{{ site.canonical }}">
     <meta name="twitter:title" content="{{ site.name }}">
-    
+
     <meta name="twitter:image:src" content="{{ site.image }}">
-    
+
     <meta property="og:image" content="{{ site.image }}">
     <meta property="og:title" content="{{ site.name }}">
     <meta property="og:url" content="http://{{ site.canonical }}">
-    
+
     {% if site.description %}
         <meta name="description" content="{{ site.description }}">
         <meta name="twitter:description" content="{{ site.description }}">
@@ -99,7 +162,7 @@
         <meta name="twitter:description" content="{{ site.tagLine }}">
         <meta name="og:description" content="{{ site.tagLine }}" >
     {% endif %}
-    
+
     <!-- [if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif] -->
@@ -113,9 +176,9 @@
     <div itemscope itemtype="http://schema.org/SoftwareApplication" class="wrapper">
       <header>
         <h1 itemprop="name">{% if page.nameShort %} {{ page.nameShort }} {% else %} {{ site.name }} {% endif %}</h1>
-        
+
         <p itemprop="description">{% if page.tagLine %} {{ page.tagLine }}{% else %} {{ site.tagLine }} {% endif %}</p>
-        
+
         <div id="js-google-pluseone" class="g-plusone" data-size="small" data-annotation="none">
             <svg class="g-plusone-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" width="22.0px" height="13px" viewBox="-3.0 -2.0 22.0 13.0"><path d="m3.988,3.428c.281-.272 .306-.65 .306-.863 0-.851-.526-2.175-1.54-2.175-.317,0-.66,.153-.855,.391-.209,.247-.27,.566-.27,.874 0,.791 .477,2.103 1.528,2.103 .305-0 .635-.141 .831-.33m-.798,2.233c0,0-.68,.06-1.193,.224-.269,.094-.978,.344-.978,1.181 0,.84 .843,1.441 2.151,1.441 1.173,0 1.797-.544 1.797-1.275 0-.604-.589-1.209-1.333-1.562-.14,.008-.444-.009-.444-.009zm1.552-5.081c.205,.243 .627,.633 .627,1.44 0,.875-.514,1.289-1.026,1.679-.16,.154-.343,.32-.343,.579 0,.259 .184,.402 .318,.508l.44,.331c.538,.438 1.026,.84 1.026,1.654 .001,1.113-1.113,2.229-3.213,2.229-1.773,0-2.527-.811-2.527-1.686-0-.426 .118-1.114 .84-1.528 .757-.449 1.622-.49 2.17-.526-.171-.213-.203-.366-.203-.733 0-.201 .062-.32 .123-.462-.135,.012-.27,.023-.392,.023-1.295,0-2.029-.934-2.029-1.855 0-.544 .257-1.146 .782-1.584 .698-.554 1.529-.649 2.189-.649h2.417l-.6,.58h-.599z"></path><path d="m3.988,3.428c.281-.272 .306-.65 .306-.863 0-.851-.526-2.175-1.54-2.175-.317,0-.66,.153-.855,.391-.209,.247-.27,.566-.27,.874 0,.791 .477,2.103 1.528,2.103 .305-0 .635-.141 .831-.33m-.798,2.233c0,0-.68,.06-1.193,.224-.269,.094-.978,.344-.978,1.181 0,.84 .843,1.441 2.151,1.441 1.173,0 1.797-.544 1.797-1.275 0-.604-.589-1.209-1.333-1.562-.14,.008-.444-.009-.444-.009zm1.552-5.081c.205,.243 .627,.633 .627,1.44 0,.875-.514,1.289-1.026,1.679-.16,.154-.343,.32-.343,.579 0,.259 .184,.402 .318,.508l.44,.331c.538,.438 1.026,.84 1.026,1.654 .001,1.113-1.113,2.229-3.213,2.229-1.773,0-2.527-.811-2.527-1.686-0-.426 .118-1.114 .84-1.528 .757-.449 1.622-.49 2.17-.526-.171-.213-.203-.366-.203-.733 0-.201 .062-.32 .123-.462-.135,.012-.27,.023-.392,.023-1.295,0-2.029-.934-2.029-1.855 0-.544 .257-1.146 .782-1.584 .698-.554 1.529-.649 2.189-.649h2.417l-.6,.58h-.599z"></path><path d="m13.997,1-.997,0 0,1 1,0 0,6 1,0 0-6 0-1z"></path><path d="m12,4-2,0 0-2-1,0 0,2-2,0 0,1 2,0 0,2 1,0 0-2 2,0z"></path></svg>
         </div>
@@ -134,7 +197,7 @@
           <li><a class="link-download" rel="nofollow" href="https://github.com/{{ site.repoSource }}">{{ site.viewOn|remove: 'GitHub' }} <strong>GitHub</strong></a></li>
         </ul>
         {% endunless %}
-      
+
        {% if page.lang %}
            {% for lang in page.lang %}
                {% if lang.translation %}
@@ -148,9 +211,9 @@
                {% endif %}
             {% endfor %}
        {% endif %}
-       
+
        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CEAIV27L&placement=cloudcmdio" id="_carbonads_js"></script>
-      
+
       </header>
       <section>
         {{ content }}
@@ -162,18 +225,18 @@
     <script>
         !!(function() {
             'use strict';
-            
+
             window.addEventListener('load', async function load() {
                 analytics()
-                
+
                 await Promise.all([
                     jsload('//files.cloudcmd.io/layout/default.js'),
                     jsload('//www.google-analytics.com/analytics.js'),
                 ]);
-                
+
                 window.removeEventListener('load', load);
             });
-            
+
             async function jsload(src) {
                 return new Promise((resolve, reject) => {
                     const script = document.createElement('script');
@@ -183,20 +246,20 @@
                     document.body.appendChild(script);
                 });
             }
-            
+
             function analytics() {
                 window.GoogleAnalyticsObject = 'ga';
-                
+
                 if (!window.ga)
                     window.ga = function () {
                         if (!window.ga.q)
                             window.ga.q = []
-                
+
                         window.ga.q.push(arguments);
                     };
-                
+
                 window.ga.l = 1 * new Date();
-                
+
                 ga('create','{{ site.ga }}','{{ site.canonical }}');
                 ga('send','pageview');
             }
@@ -212,7 +275,7 @@
         .anchor-override {
             color: #393939
         }
-        
+
         .anchor-override:hover {
             border: 0;
         }
